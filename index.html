@@ -116,6 +116,19 @@
       #div_support {
         right: 22px;
       }
+      /* === CODE MỚI ĐỂ THÊM TÊN === */
+      #top-name {
+        position: absolute;
+        top: 40px; /* Điều chỉnh khoảng cách với lề trên */
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 2rem; /* Điều chỉnh kích thước chữ */
+        font-weight: bold;
+        text-shadow: 2px 2px 4px #000;
+        z-index: 1000;
+        display: none; /* Ban đầu sẽ ẩn đi */
+      }
     </style>
   </head>
   <body style="overflow-x: hidden; overflow-y: hidden; background: #000">
@@ -129,6 +142,7 @@
       </div>
 
       <div class="bg">
+        <div id="top-name">Phương Thảo</div>
         <video
           id="video1"
           src="https://alimov2.a.kwimgs.com/upic/2024/05/08/12/BMjAyNDA1MDgxMjIyMDdfMzAyOTc4ODMzNF8xMzE4NzI4MDcyNDVfMF8z_b_B9c2427ae093cdbb9922763dfed1a6f8a.mp4"
@@ -245,6 +259,7 @@
         $(".animated-text").css("animation", "moveText 1s linear infinite");
         $("#video1").show();
         $(".centered-div").show();
+        $('#top-name').show(); /* HIỆN TÊN */
         printText();
         checkAudio();
       });
@@ -303,26 +318,8 @@
       var ctext =
         (dataInfo.ctitle ? dataInfo.ctitle : dataInfo.title) + "\n" + pageUrl;
       var ua = navigator.userAgent.toLowerCase();
-      if (ua.indexOf("miniprogram") < 1 && temp_id != "25") {
-        var is_copy = false;
-        var htmlobj = document.querySelector("html");
-        htmlobj.addEventListener("click", function () {
-          if (!is_copy) {
-            if (typeof ntzgo === "function") {
-              ntzgo();
-            }
-            copyText(ctext);
-            is_copy = true;
-            var btns = document.querySelectorAll(".div_btn");
-            btns.length > 0 ? (btns[0].style.display = "block") : "";
-            btns.length > 1 ? (btns[1].style.display = "block") : "";
-          }
-        });
-      } else if (ua.indexOf("miniprogram") < 1 && temp_id == "25") {
-        if (typeof ntzgo === "function") {
-          ntzgo();
-        }
-      }
+      
+      // === ĐOẠN CODE TỰ SAO CHÉP ĐÃ BỊ XÓA Ở ĐÂY ===
 
       function copyText(ctext) {
         const textarea = document.createElement("textarea");
