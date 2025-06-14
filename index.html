@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <title>❤️️️</title>
     <meta
@@ -118,17 +121,29 @@
       }
       /* === CODE MỚI ĐỂ THÊM TÊN === */
       #top-name {
-        position: absolute;
-        top: 40px; /* Điều chỉnh khoảng cách với lề trên */
-        left: 50%;
-        transform: translateX(-50%);
-        color: #fff;
-        font-size: 2rem; /* Điều chỉnh kích thước chữ */
-        font-weight: bold;
-        text-shadow: 2px 2px 4px #000;
-        z-index: 1000;
-        display: none; /* Ban đầu sẽ ẩn đi */
-      }
+ position: absolute;
+ top: 40px;
+ left: 50%;
+ transform: translateX(-50%);
+ color: #ff69b4; /* Màu hồng */
+ font-size: 2.2rem; /* Điều chỉnh kích thước cho phù hợp */
+ font-weight: bold;
+ text-shadow: 1px 1px 2px #000;
+ z-index: 1000;
+ display: none;
+ font-family: ' pháp sư đánh chữ', cursive; /* Font chữ mềm mại (bạn có thể thay thế) */
+ animation: slightJump 2s ease-in-out infinite alternate; /* Thêm animation */
+}
+
+@keyframes slightJump {
+ 0% {
+   transform: translateX(-50%) translateY(0);
+ }
+ 100% {
+   transform: translateX(-50%) translateY(-5px); /* Nhảy lên 5px */
+ }
+}
+
     </style>
   </head>
   <body style="overflow-x: hidden; overflow-y: hidden; background: #000">
